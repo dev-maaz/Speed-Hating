@@ -1,10 +1,10 @@
 # The Speed Hating App
 
-Devious in nature and very unorthodox. Speed Hating is like Speed Dating, but instead of finding your soulmate, you're simulating an average reddit conversation. Pitting yourself against someone online who equally hates you as much as they probably hate themself, Speed Hating lets you let out your inner demons. Saying vile things is part of the win condition, infact you're encouraged to let out your frustration here so can spend a good rest of the day. The anonymity and inconsequential nature of this game may tempt the calmest of people, whether they wear Grayhats or White Tuxedos...
+Devious in nature and very unorthodox. Speed Hating is like Speed Dating, but instead of finding your soulmate, you're simulating an average reddit conversation. Pitting yourself against someone online who equally hates you as much as they probably hate themselves, Speed Hating lets you let out your inner demons. Saying vile things is part of the win condition, infact you're encouraged to let out your frustration here so can spend a good rest of the day. The anonymity and inconsequential nature of this game may tempt the calmest of people, whether they wear Grayhats or White Tuxedos ...
 
 ## How to Play
 
-The game is quite simple, after pressing the play button, you enter a lobby. All you have to do is share your URL with one of your very very close friends and wait for them to join. Press launch to start the game. Once the game starts, try to assert your dominance over the other player in anyway you feel like. Better insults will net you good scores, but be careful not to say grunts or throw small insults since they might end up leaving your own reputation tarnished and embarassed. 
+The game is quite simple, after pressing the play button, you enter a lobby. All you have to do is share your URL with one of your very very close friends and wait for them to join. Press launch to start the game. Once the game starts, try to assert your dominance over the other player in anyway you feel like. Better insults will net you good scores, but be careful not to say grunts or throw small insults since they might end up leaving your own reputation tarnished.
 
 ## Task Check List
 
@@ -36,7 +36,7 @@ Added a PromptDisplay that periodically gives different hints to the player to h
 
 # Disclaimer
 
-The theme of this game is completely for entertainment purposes and done with the motivation to completely indulge in creating a silly product. This game is by no means represents my personal values or beliefs neither my professionalism or attitude in a serious working environment.
+The theme of this game is completely for entertainment purposes and done with the motivation to completely indulge in creating a silly product. This game by no means represents my personal values or beliefs neither my professionalism or attitude in a serious working environment.
 
 
 
