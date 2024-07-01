@@ -36,7 +36,7 @@ Added a PromptDisplay that periodically gives different hints to the player to h
 
 # Disclaimer
 
-The purpose of this game is supposed to be completely for entertainment purposes and to completely indulge in creating a silly product. This game is by no means represents my personal values or beliefs neither my professionalism or attitude in a serious working environment
+The theme of this game is completely for entertainment purposes and done with the motivation to completely indulge in creating a silly product. This game is by no means represents my personal values or beliefs neither my professionalism or attitude in a serious working environment.
 
 
 
