@@ -34,4 +34,9 @@ Added a length Restriction of 7 on sentences, violating it results in negative s
 
 Added a PromptDisplay that periodically gives different hints to the player to help them form strong "arguments".
 
+# Disclaimer
+
+The purpose of this game is supposed to be completely for entertainment purposes and to completely indulge in creating a silly product. This game is by no means represents my personal values or beliefs neither my professionalism or attitude in a serious working environment
+
+
 
