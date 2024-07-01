@@ -1,46 +1,35 @@
 import {
-  onPlayerJoin,
   insertCoin,
-  isHost,
   myPlayer,
   useMultiplayerState,
-  usePlayersList,
-  getState,
   setState,
+  usePlayerState,
+  usePlayersList,
 } from "playroomkit";
 import { useEffect, useState } from "react";
 import ChatMessage from "../components/ChatMessage";
+import { AnimatePresence } from "framer-motion";
+import PromptDisplay from "../components/PromptDisplay";
+
 
 function PlayPage() {
+
   const [messages, setMessages] = useMultiplayerState("message", []);
   const [input, setInput] = useState("");
-//   const [score, setScore] = useState(0);
+  const [localScore, setLocalScore] = useState(0);
 
-  const insults = [
-    "Thou spongy hasty-witted codpiece",
-    "A churlish ill-nurtured clotpole art thou.",
-    "Qualling ill-breeding puttock, begone!",
-    "Thou art a dankish hasty-witted miscreant.",
-    "Frothy weather-bitten pignut thou be.",
-    "What a pribbling common-kissing wagtail thou art.",
-    "Rogue, thou folly-fallen knave!",
-    "A beslubbering beef-witted miscreant is he.",
-    "Thou art naught but a warped moldwarp.",
-    "Unmuzzled dread-bolted harpy, away with thee!",
-  ];
+  const [isLoading, setIsLoading] = useState(true);
 
-  const hints = ["no one asked", "dont care", "womp", "xD", "smooth brain", "didnt ask", "rekt", "stupid", "dumb", "braincell"]
+  const insults = ["no one asked", "dont care", "womp", "xD", "smooth brain", "didnt ask", "rekt", "stupid", "dumb", "braincell", "i am intellectual", "complexities", "amateur", "sad", "wrong","hopeless", "embarassing", "infuriating"]
 
   const avatars = [
-    "Angry-Man.jpg",
+    "Angrygnome.jfif",
     "pfp-1.jfif",
     "pfp-2.png",
     "pfp-3.png",
     "pfp-4.jfif",
     "pfp-5.jfif",
   ];
-
-  const defaultPlayerStates = { score: 0 };
 
   const maxPlayersPerRoom = 2;
 
@@ -49,57 +38,73 @@ function PlayPage() {
       avatars,
       maxPlayersPerRoom,
     });
-
-    myPlayer().setState("score", 0);
+    
+    const player = myPlayer();
+    
+    setIsLoading(false);
+    player && player.setState("score", 0);
   };
 
   useEffect(() => {
     lobbyLaunch();
   });
 
-  const players = usePlayersList();
-  const thisPlayer = myPlayer();
+  try {
 
-  
-
+    var playerAvatar = myPlayer().getProfile().photo;
+    
+  } catch (error) {
+    
+    console.log(error);
+  }
 
   const handleSendMessage = () => {
+    
     if (input) {
-
-      if (input.length <= 3) {
-
       
-      }
+        let currentInput = input;
+        if (input.length < 4) {
+          currentInput = "*embarassing tongue slip* 🤓";
+          setLocalScore(localScore-1);
+        }
+        else {
 
-    if (input) {
+          insults.forEach( (insult) => {
+            input.includes(insult) && setLocalScore(localScore+1);
+          })
 
-        
-    }
+        }
 
-      const messageDetails = {
-        message: input,
-        name: myPlayer().getProfile().name,
-        avatar: myPlayer().getProfile().photo,
+        const messageDetails = {
+          message: currentInput,
+          name: myPlayer().getProfile().name,
+          avatar: myPlayer().getProfile().photo,
       };
-      setMessages([...messages, messageDetails]);
-      setInput("");
+
+
+        setMessages([...messages, messageDetails]);
+        setInput("");
     }
   };
+
+  if (isLoading) {
+    return (
+      <div className="flex font-mono text-slate-100 bg-neutral-950 justify-center items-center h-screen w-screen">
+        Loading...
+      </div>
+    );
+  }
+
 
   return (
     <>
       <div className="flex font-mono text-slate-100 bg-neutral-950 justify-center items-center h-screen w-screen flex-col">
-        <div className="flex justify-around w-full p-4">
+            <div className="flex p-4 text-2xl h-16 w-full justify-center"> Score:{localScore}  </div>
+            <PromptDisplay />
 
-            <img className="rounded-full w-16 h-16 box-border" src="" alt="player-avatar" />
-            <div className="flex p-4 text-2xl h-16"> Score: {} </div>
-            <img className="rounded-full w-16 h-16 box-border scale-x-[-1]" src="" alt="player-avatar" />
-        </div>
+        <div className="flex justify-center items-center"></div>
         <div className="flex flex-col h-4/5 w-4/5 p-4 border-2 border-slate-100 rounded-2xl">
           {messages.slice(-8).map((msg, i) => {
-            // const player = players.find(p=>p.id===msg.user.id);
-            // if (!player)return null;
-            // return msg.message.input
             return (
               <ChatMessage
                 avatar={msg.avatar}
