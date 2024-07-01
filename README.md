@@ -1,6 +1,6 @@
 # The Speed Hating App
 
-Devious in nature and very unorthodox. Speed Hating is like Speed Dating, but instead of finding your soulmate, you're simulating an average reddit conversation. Pitting yourself against someone online who equally hates you as much as they probably hate themself, Speed Hating lets you let out your inner demons. Saying vile things is part of the win condition, infact you're encouraged to let out your frustration here so can spend a good rest of the day. 
+Devious in nature and very unorthodox. Speed Hating is like Speed Dating, but instead of finding your soulmate, you're simulating an average reddit conversation. Pitting yourself against someone online who equally hates you as much as they probably hate themself, Speed Hating lets you let out your inner demons. Saying vile things is part of the win condition, infact you're encouraged to let out your frustration here so can spend a good rest of the day. The anonymity and inconsequential nature of this game may tempt the calmest of people, whether they wear Grayhats or White Tuxedos...
 
 ## How to Play
 
