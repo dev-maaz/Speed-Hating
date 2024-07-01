@@ -1,70 +1,37 @@
-# Getting Started with Create React App
+# The Speed Hating App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Devious in nature and very unorthodox. Speed Hating is like Speed Dating, but instead of finding your soulmate, you're simulating an average reddit conversation. Pitting yourself against someone online who equally hates you as much as they probably hate themself, Speed Hating lets you let out your inner demons. Saying vile things is part of the win condition, infact you're encouraged to let out your frustration here so can spend a good rest of the day. 
 
-## Available Scripts
+## How to Play
 
-In the project directory, you can run:
+The game is quite simple, after pressing the play button, you enter a lobby. All you have to do is share your URL with one of your very very close friends and wait for them to join. Press launch to start the game. Once the game starts, try to assert your dominance over the other player in anyway you feel like. Better insults will net you good scores, but be careful not to say grunts or throw small insults since they might end up leaving your own reputation tarnished and embarassed. 
 
-### `npm start`
+## Task Check List
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Task 1: ✅
+Task 2: ✅
+Task 3: ✅
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Bonus Tasks
 
-### `npm test`
+Bonus Task 1: ❌
+Bonus Task 2: ✅
+Bonus Task 3: ❌
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## General Approach
 
-### `npm run build`
+HomePage > PlayerPage > Victory Modal ( Does not work yet)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The PlayerPage initates the player lobby using playroomkit, allowing players to connect. Since this is a debating( more of insult slinging) game it is supposed to be between 2 players only, so maxplayers = 2.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+An Array is passed in insertCoin() for customised avatars.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Chat messages are handled using a multiplayerState Map structure so both players have track of the messages being sent to each other. Each message before being saved has it's sender information saved for identification during rendering. This array is then sent to a component that renders chat messages. 
 
-### `npm run eject`
+Accessing myPlayer() values has been very inconsistent for me, with the code running and the exact same code throwing an error when i ran it after an hour or so. regardless, due to this inconsistency I shifted the scores to a local react state hook and calculated score based on the number of insults a player has in their sentence. The more insults, the more score you get for the sentence. Insults are an array of strings stored in the PlayerPage.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Added a length Restriction of 7 on sentences, violating it results in negative score (and embarassment).
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Added a PromptDisplay that periodically gives different hints to the player to help them form strong "arguments".
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
